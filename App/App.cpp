@@ -1,10 +1,10 @@
 ﻿// App.cpp : Определяет точку входа для приложения.
 //
+#include "App.h"
 #include <iostream>
 
-#include "framework.h"
-#include "App.h"
-#include "Form.h"
+#include "kernel_space/framework.h"
+#include "user_space/Form.h"
 
 #include <thread>
 
@@ -33,25 +33,25 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         form.eventLoop(nCmdShow);
         } };
 
-    //std::jthread th2{
-    //[&] {
-    //    App::Form form{};
-    //    form
-    //        .setWindowName(L"qqq")
-    //        .setClassName(L"Form2")
-    //        .setStartWindowPoint(POINT{ 950, 150 })
-    //        .setHeight(600)
-    //        .setWidth(800)
-    //        ;
+    std::jthread th2{
+    [&] {
+        App::Form form{};
+        form
+            .setWindowName(L"qqq")
+            .setClassName(L"Form2")
+            .setStartWindowPoint(POINT{ 950, 150 })
+            .setHeight(600)
+            .setWidth(800)
+            ;
 
-    //    if (!form.create(hInstance)) [[unlikely]]
-    //    {
-    //        std::cout << "--\n";
-    //        return;
-    //    }
+        if (!form.create(hInstance)) [[unlikely]]
+        {
+            std::cout << "--\n";
+            return;
+        }
 
-    //    form.eventLoop(nCmdShow);
-    //    } };
+        form.eventLoop(nCmdShow);
+        } };
 
     return 0;
 }

@@ -128,27 +128,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
-    <ClInclude Include="Form.h" />
-    <ClInclude Include="FormBase.h" />
-    <ClInclude Include="framework.h" />
-    <ClInclude Include="Resource.h" />
-    <ClInclude Include="targetver.h" />
-    <ClInclude Include="WindowBase.h" />
-    <ClInclude Include="WindowButton.h" />
-    <ClInclude Include="WindowLabel.h" />
+    <ClInclude Include="user_space\Form.h" />
+    <ClInclude Include="kernel_space\include\FormBase.h" />
+    <ClInclude Include="kernel_space\framework.h" />
+    <ClInclude Include="kernel_space\Resource.h" />
+    <ClInclude Include="kernel_space\targetver.h" />
+    <ClInclude Include="kernel_space\include\WindowBase.h" />
+    <ClInclude Include="kernel_space\include\WindowButton.h" />
+    <ClInclude Include="kernel_space\include\WindowLabel.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
-    <ClCompile Include="WindowBase.cpp" />
-    <ClCompile Include="WindowButton.cpp" />
-    <ClCompile Include="WindowLabel.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="App.rc" />
+    <ResourceCompile Include="kernel_space\App.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="App.ico" />
-    <Image Include="small.ico" />
+    <Image Include="kernel_space\App.ico" />
+    <Image Include="kernel_space\small.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

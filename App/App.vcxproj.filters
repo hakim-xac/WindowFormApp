@@ -15,31 +15,31 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h">
+    <ClInclude Include="kernel_space\framework.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="targetver.h">
+    <ClInclude Include="kernel_space\targetver.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Resource.h">
+    <ClInclude Include="kernel_space\Resource.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="App.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="FormBase.h">
+    <ClInclude Include="kernel_space\include\FormBase.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="WindowButton.h">
+    <ClInclude Include="kernel_space\include\WindowButton.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="WindowBase.h">
+    <ClInclude Include="kernel_space\include\WindowBase.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="WindowLabel.h">
+    <ClInclude Include="kernel_space\include\WindowLabel.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Form.h">
+    <ClInclude Include="user_space\Form.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -47,26 +47,17 @@
     <ClCompile Include="App.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="WindowButton.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="WindowBase.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="WindowLabel.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="App.rc">
+    <ResourceCompile Include="kernel_space\App.rc">
       <Filter>Файлы ресурсов</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="small.ico">
+    <Image Include="kernel_space\small.ico">
       <Filter>Файлы ресурсов</Filter>
     </Image>
-    <Image Include="App.ico">
+    <Image Include="kernel_space\App.ico">
       <Filter>Файлы ресурсов</Filter>
     </Image>
   </ItemGroup>

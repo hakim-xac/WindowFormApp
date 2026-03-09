@@ -3,9 +3,10 @@
 #include <vector>
 #include <algorithm>
 #include <type_traits>
-#include "WindowButton.h"
-#include "WindowLabel.h"
-#include "FormBase.h"
+#include <memory>
+#include "../kernel_space/include/WindowButton.h"
+#include "../kernel_space/include/WindowLabel.h"
+#include "../kernel_space/include/FormBase.h"
 
 namespace App::FormResources
 {

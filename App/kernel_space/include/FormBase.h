@@ -1,8 +1,8 @@
 #pragma once
-#include "framework.h"
+#include "../framework.h"
+#include "../resource.h"
 #include <string>
 #include <optional>
-#include "resource.h"
 
 namespace App
 {
@@ -20,38 +20,38 @@ namespace App
         {
         }
 
-        inline FormBase& setWindowName(std::wstring window_name)&
+        FormBase& setWindowName(std::wstring window_name)&
         {
             m_window_name = std::move(window_name);
             return *this;
         }
 
-        inline FormBase& setClassName(std::wstring class_name)&
+        FormBase& setClassName(std::wstring class_name)&
         {
             m_class_name = std::move(class_name);
             return *this;
         }
 
-        inline FormBase& setStartWindowPoint(POINT pos)&
+        FormBase& setStartWindowPoint(POINT pos)&
         {
             m_rect_window.left = pos.x;
             m_rect_window.top = pos.y;
             return *this;
         }
 
-        inline FormBase& setHeight(LONG height)&
+        FormBase& setHeight(LONG height)&
         {
             m_rect_window.bottom = height;
             return *this;
         }
 
-        inline FormBase& setWidth(LONG width)&
+        FormBase& setWidth(LONG width)&
         {
             m_rect_window.right = width;
             return *this;
         }
 
-        inline [[nodiscard]] bool
+        [[nodiscard]] bool
         create(HINSTANCE hinstance)
         {
             if (!MyRegisterClass(hinstance, m_class_name))
@@ -63,7 +63,7 @@ namespace App
             return true;
         }
 
-        inline void eventLoop(int cmd_show) const
+        void eventLoop(int cmd_show) const
         {
             ShowWindow(m_hwnd, cmd_show);
             UpdateWindow(m_hwnd);
@@ -80,12 +80,12 @@ namespace App
             }
         }
 
-        inline [[nodiscard]] HWND getHWND() const noexcept
+        [[nodiscard]] HWND getHWND() const noexcept
         {
             return m_hwnd;
         }
 
-        inline [[nodiscard]] HINSTANCE getHINSTANCE() const noexcept
+        [[nodiscard]] HINSTANCE getHINSTANCE() const noexcept
         {
             return m_hinstance;
         }
@@ -95,6 +95,11 @@ namespace App
         LRESULT localWndProc(UINT message, WPARAM wParam, LPARAM lParam) noexcept
         {
             return static_cast<DeriveForm*>(this)->callbackWndProc(message, wParam, lParam);
+        }
+
+        void setHWND(HWND hwnd)
+        {
+            m_hwnd = hwnd;
         }
 
         static bool MyRegisterClass(HINSTANCE hInstance, const std::wstring& class_name)
@@ -137,11 +142,6 @@ namespace App
                 return form_ptr->localWndProc(message, wParam, lParam);
 
             return ::DefWindowProc(hWnd, message, wParam, lParam);
-        }
-
-        void setHWND(HWND hwnd)
-        {
-            m_hwnd = hwnd;
         }
     private:
         std::wstring m_class_name;

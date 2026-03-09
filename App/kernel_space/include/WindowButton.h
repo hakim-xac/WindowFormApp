@@ -1,11 +1,10 @@
 #pragma once
 
-#include "framework.h"
-#include "WindowBase.h"
+#include "../framework.h"
 #include <string>
 #include <unordered_map>
 #include <functional>
-#include <type_traits>
+#include "WindowBase.h"
 
 namespace App::detail
 {
